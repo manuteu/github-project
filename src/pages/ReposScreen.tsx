@@ -1,10 +1,14 @@
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default function ReposScreen() {
+import ContainerRepos from '../components/ContainerRepos';
+
+export default function ReposScreen({ navigation }: any) {
   return (
     <View>
-      <Text>Repositórios</Text>
+      <ContainerRepos onPress={() => navigation.replace('Tab')} />
+      <StatusBar style="light" />
     </View>
   );
 }

@@ -7,7 +7,6 @@ export default function HomeScreen({ navigation }: any) {
   return (
     <View>
       <ContainerHome onPress={() => navigation.replace('Login')} />
-      {/* <Button title="Voltar" onPress={() => navigation.replace('Login')} /> */}
       <StatusBar style="dark" />
     </View>
   );
