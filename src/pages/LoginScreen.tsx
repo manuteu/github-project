@@ -23,8 +23,7 @@ export default function LoginScreen({ navigation }: any) {
   async function getUserData() {
     try {
       const response = await api.get(`/${userName}`);
-      // ctx.setUserData(response.data);
-      console.log(response.data);
+      ctx.setUserData(response.data);
     } catch (error) {
       console.log(error);
     }

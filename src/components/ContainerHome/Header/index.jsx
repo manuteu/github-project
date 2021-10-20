@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
+import { context } from '../../context';
+
 export default function Header({ backToLogin }) {
+  const ctx = useContext(context);
   return (
     <View style={styles.container}>
-      <Text style={styles.username}>#manuteu</Text>
+      <Text style={styles.username}>#{ctx.userData?.login}</Text>
       <TouchableOpacity style={styles.exitContainer} onPress={backToLogin}>
         <Text style={styles.textButton}>Sair</Text>
         <Ionicons

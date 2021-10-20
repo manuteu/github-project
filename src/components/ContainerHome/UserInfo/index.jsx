@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import YellowTab from '../../YellowTab';
 
+import { context } from '../../context';
+
 export default function UserInfo() {
+  const ctx = useContext(context);
   return (
     <View style={styles.container}>
       <View style={styles.row}>
         <YellowTab />
-        <Text style={styles.userName}>Matheus Rodrigues</Text>
+        <Text style={styles.userName}>{ctx.userData?.name}</Text>
       </View>
-      <Text style={styles.userEmail}>matheusim27@hotmail.com</Text>
-      <Text style={styles.userLocation}>Brasília/DF</Text>
+      <Text style={styles.userEmail}>{ctx.userData?.email}</Text>
+      <Text style={styles.userLocation}>{ctx.userData?.location}</Text>
     </View>
   );
 }

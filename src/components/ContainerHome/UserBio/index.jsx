@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import YellowTab from '../../YellowTab';
 
+import { context } from '../../context';
+
 export default function UserBio() {
+  const ctx = useContext(context);
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
@@ -10,13 +13,7 @@ export default function UserBio() {
         <Text style={styles.title}>Bio</Text>
       </View>
       <View style={styles.bioContainer}>
-        <Text style={styles.bioText}>
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It
-          has roots in a piece of classical Latin literature from 45 BC, making
-          it over 2000 years old. Richard McClintock, a Latin professor at
-          Hampden-Sydney College in Virginia, looked up one of the more obscure
-          Latin words, consectetur.
-        </Text>
+        <Text style={styles.bioText}>{ctx.userData?.bio}</Text>
       </View>
     </View>
   );

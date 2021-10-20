@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { View, Text, TouchableOpacity } from 'react-native';
 
+import { context } from '../../context';
+
 export default function UserNumbers() {
+  const ctx = useContext(context);
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.viewContainer}>
-        <Text style={styles.viewNumber}>32</Text>
+        <Text style={styles.viewNumber}>{ctx.userData?.followers}</Text>
         <Text style={styles.followersText}>Seguidores</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.viewContainer}>
-        <Text style={styles.viewNumber}>32</Text>
+        <Text style={styles.viewNumber}>{ctx.userData?.following}</Text>
         <Text style={styles.followingText}>Seguindo</Text>
       </TouchableOpacity>
 
       <TouchableOpacity style={styles.viewContainer}>
-        <Text style={styles.viewNumber}>10</Text>
+        <Text style={styles.viewNumber}>{ctx.userData?.public_repos}</Text>
         <Text style={styles.reposText}>Repos</Text>
       </TouchableOpacity>
     </View>
@@ -47,7 +50,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     color: '#FFF',
     fontWeight: '300',
-    right: 20,
+    right: 10,
   },
   followingText: {
     fontSize: 17,
