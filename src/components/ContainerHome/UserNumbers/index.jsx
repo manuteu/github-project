@@ -4,21 +4,31 @@ import { View, Text, TouchableOpacity } from 'react-native';
 
 import { context } from '../../context';
 
-export default function UserNumbers() {
+export default function UserNumbers({
+  goToFollowersPage,
+  goToFollowingPage,
+  goToReposPage,
+}) {
   const ctx = useContext(context);
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.viewContainer}>
-        <Text style={styles.viewNumber}>{ctx.userData?.followers}</Text>
+      <TouchableOpacity
+        style={(styles.viewContainer, { left: 8 })}
+        onPress={goToFollowersPage}
+      >
+        <Text style={styles.viewNumber}> {ctx.userData?.followers}</Text>
         <Text style={styles.followersText}>Seguidores</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.viewContainer}>
+      <TouchableOpacity
+        style={styles.viewContainer}
+        onPress={goToFollowingPage}
+      >
         <Text style={styles.viewNumber}>{ctx.userData?.following}</Text>
         <Text style={styles.followingText}>Seguindo</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.viewContainer}>
+      <TouchableOpacity style={styles.viewContainer} onPress={goToReposPage}>
         <Text style={styles.viewNumber}>{ctx.userData?.public_repos}</Text>
         <Text style={styles.reposText}>Repos</Text>
       </TouchableOpacity>
@@ -31,15 +41,13 @@ const styles = StyleSheet.create({
     marginTop: 44,
     height: 96,
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
     backgroundColor: '#5252525D',
     alignItems: 'center',
     // alignContent: 'center',
     // alignItems: 'center',
   },
-  viewContainer: {
-    // padding: 14,
-  },
+  viewContainer: {},
   viewNumber: {
     paddingBottom: 2,
     fontSize: 32,

@@ -6,7 +6,12 @@ import ContainerHome from '../components/ContainerHome';
 export default function HomeScreen({ navigation }: any) {
   return (
     <View>
-      <ContainerHome onPress={() => navigation.replace('Login')} />
+      <ContainerHome
+        onPress={() => navigation.navigate('Login')}
+        goToFollowersPage={() => navigation.navigate('Followers')}
+        goToFollowingPage={() => navigation.navigate('Following')}
+        goToReposPage={() => navigation.navigate('Repos')}
+      />
       <StatusBar style="dark" />
     </View>
   );

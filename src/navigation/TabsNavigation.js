@@ -11,19 +11,6 @@ import { Feather } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
-// const CustomTabBarButton = ({ onPress }) => (
-//   <TouchableOpacity
-//     style={{
-//       top: -30,
-//       justifyContent: 'center',
-//       alignItems: 'center',
-//       backgroundColor: colors.dark_asphalt,
-//       borderRadius: 35,
-//     }}
-//     onPress={onPress}
-//   ></TouchableOpacity>
-// );
-
 const Tab = createBottomTabNavigator();
 
 export default function TabsNavigation() {

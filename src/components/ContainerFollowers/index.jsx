@@ -1,30 +1,25 @@
 import React, { useContext } from 'react';
 import { View, Text, StyleSheet, Dimensions, FlatList } from 'react-native';
 import { context } from '../context';
-import Card from './Card';
+import UserCard from './UserCard';
 import Header from './Header';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export default function ContainerRepos({ onPress }) {
+export default function ContainerFollowers({ onPress }) {
   const ctx = useContext(context);
 
   return (
     <View style={styles.container}>
       <Header backToHome={onPress} />
+      {/* <UserCard /> */}
       <FlatList
-        data={ctx.repos}
+        data={ctx?.followers}
         keyExtractor={(item) => String(item.id)}
         ItemSeparatorComponent={() => <View style={styles.borderCointaier} />}
-        contentInset={{ bottom: 100 }}
-        renderItem={({ item }) => (
-          <Card
-            data={item}
-            // description={item?.description}
-            // stargazers_count={item?.stargazers_count}
-          />
-        )}
+        contentInset={{ bottom: 100, top: 2 }}
+        renderItem={({ item }) => <UserCard data={item} />}
       />
     </View>
   );

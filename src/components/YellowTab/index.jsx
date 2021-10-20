@@ -10,9 +10,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFCE00',
     height: 42,
     width: 50,
-    borderTopRightRadius: 12,
-    borderBottomRightRadius: 12,
+    borderTopRightRadius: 10,
+    borderBottomRightRadius: 10,
     // position: 'absolute',
-    left: -38,
+    left: -40,
   },
 });

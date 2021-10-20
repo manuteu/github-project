@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default function FollowersScreen() {
+import ContainerFollowers from '../components/ContainerFollowers';
+
+export default function FollowersScreen({ navigation }: any) {
   return (
     <View>
-      <Text>Seguidores</Text>
+      <ContainerFollowers onPress={() => navigation.replace('Tab')} />
     </View>
   );
 }

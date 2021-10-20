@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 import { context } from '../../context';
@@ -13,7 +13,7 @@ export default function Header({ backToHome }) {
       </Pressable>
 
       <Text style={styles.textHeader}>
-        {ctx.userData?.public_repos} repositórios
+        {ctx.userData?.followers} seguidores
       </Text>
     </View>
   );
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontSize: 18,
     color: '#FFF',
-    marginRight: '35%',
+    marginRight: '36%',
     fontWeight: 'bold',
   },
 });

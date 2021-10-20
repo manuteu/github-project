@@ -23,7 +23,15 @@ export default function LoginScreen({ navigation }: any) {
   async function getUserData() {
     try {
       const response = await api.get(`/${userName}`);
+      const repos = await api.get(`/${userName}/repos`);
+      const followers = await api.get(`/${userName}/followers`);
+      const following = await api.get(`/${userName}/following`);
+
       ctx.setUserData(response.data);
+      ctx.setRepos(repos.data);
+      ctx.setFollowers(followers.data);
+
+      ctx.setFollowing(following.data);
     } catch (error) {
       console.log(error);
     }
