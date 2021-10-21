@@ -1,20 +1,29 @@
 import React, { useContext } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Pressable,
+} from 'react-native';
+import { Ionicons, AntDesign } from '@expo/vector-icons';
 
 import { context } from '../../context';
 
-export default function Header({ backToLogin }) {
+export default function Header({ backToLogin, backToHome }) {
   const ctx = useContext(context);
   return (
     <View style={styles.container}>
+      <Pressable onPress={backToHome} style={styles.iconBack}>
+        <AntDesign name="arrowleft" size={24} color="#FFF" />
+      </Pressable>
       <Text style={styles.username}>#{ctx.userData?.login}</Text>
       <TouchableOpacity style={styles.exitContainer} onPress={backToLogin}>
-        <Text style={styles.textButton}>Sair</Text>
+        <Text style={styles.textButton}>Salvar</Text>
         <Ionicons
-          name="exit-outline"
+          name="enter-outline"
           size={24}
-          color="#D03434"
+          color="#5CBC29"
           style={styles.iconButton}
         />
       </TouchableOpacity>
@@ -35,7 +44,10 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     color: '#FFF',
     fontWeight: 'bold',
-    marginLeft: 18,
+    left: '24%',
+  },
+  iconBack: {
+    left: 20,
   },
   exitContainer: {
     flexDirection: 'row',
@@ -47,7 +59,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   iconButton: {
-    paddingLeft: 8,
+    paddingLeft: 4,
     marginRight: 18,
   },
 });

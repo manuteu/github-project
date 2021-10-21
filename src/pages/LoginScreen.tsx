@@ -30,7 +30,6 @@ export default function LoginScreen({ navigation }: any) {
       ctx.setUserData(response.data);
       ctx.setRepos(repos.data);
       ctx.setFollowers(followers.data);
-
       ctx.setFollowing(following.data);
     } catch (error) {
       console.log(error);

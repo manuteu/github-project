@@ -7,7 +7,7 @@ import Header from './Header';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export default function ContainerFollowers({ onPress, handleInfo }) {
+export default function ContainerFollowing({ onPress }) {
   const ctx = useContext(context);
 
   return (
@@ -15,13 +15,11 @@ export default function ContainerFollowers({ onPress, handleInfo }) {
       <Header backToHome={onPress} />
       {/* <UserCard /> */}
       <FlatList
-        data={ctx?.followers}
+        data={ctx?.following}
         keyExtractor={(item) => String(item.id)}
         ItemSeparatorComponent={() => <View style={styles.borderCointaier} />}
         contentInset={{ bottom: 100, top: 2 }}
-        renderItem={({ item }) => (
-          <UserCard data={item} handleInfo={handleInfo} />
-        )}
+        renderItem={({ item }) => <UserCard data={item} />}
       />
     </View>
   );

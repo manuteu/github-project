@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default function FollowingScreen() {
+import ContainerFollowing from '../components/ContainerFollowing';
+
+export default function FollowersScreen({ navigation }: any) {
   return (
     <View>
-      <Text>Seguindo</Text>
+      <ContainerFollowing onPress={() => navigation.navigate('Home')} />
     </View>
   );
 }

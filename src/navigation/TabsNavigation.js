@@ -1,13 +1,12 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 
 import HomeScreen from '../pages/HomeScreen';
 import ReposScreen from '../pages/ReposScreen';
 import FollowersScreen from '../pages/FollowersScreen';
 import FollowingScreen from '../pages/FollowingScreen';
 
-import { Feather } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 

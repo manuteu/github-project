@@ -7,7 +7,7 @@ import ContainerRepos from '../components/ContainerRepos';
 export default function ReposScreen({ navigation }: any) {
   return (
     <View>
-      <ContainerRepos onPress={() => navigation.replace('Tab')} />
+      <ContainerRepos onPress={() => navigation.navigate('Home')} />
       <StatusBar style="light" />
     </View>
   );

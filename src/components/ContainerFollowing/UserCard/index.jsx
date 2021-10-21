@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import YellowTab from '../../YellowTab';
 import { AntDesign } from '@expo/vector-icons';
 
-export default function UserCard({ data, handleInfo }) {
+export default function UserCard({ data }) {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -12,7 +12,7 @@ export default function UserCard({ data, handleInfo }) {
         <Text style={styles.userName}>#{data?.login}</Text>
       </View>
       <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={handleInfo}>
+        <TouchableOpacity>
           <AntDesign
             name="arrowright"
             size={20}
