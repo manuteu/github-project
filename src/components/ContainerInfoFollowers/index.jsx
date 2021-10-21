@@ -10,10 +10,10 @@ import UserBio from './UserBio';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export default function ContainerInfo({ onPress, backToHome }) {
+export default function ContainerInfo({ onPress, back }) {
   return (
     <View style={styles.container}>
-      <Header backToLogin={onPress} backToHome={backToHome} />
+      <Header backToLogin={onPress} backToHome={back} />
       <View style={styles.subContainer}>
         <UserPicture />
         <ScrollView

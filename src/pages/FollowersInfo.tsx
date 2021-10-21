@@ -8,7 +8,7 @@ export default function FollowersInfo({ navigation }: any) {
     <View>
       <ContainerInfoFollowers
         onPress={() => navigation.navigate('Home')}
-        backToHome={() => navigation.navigate('Home')}
+        back={() => navigation.navigate('Followers')}
       />
     </View>
   );
