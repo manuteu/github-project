@@ -3,10 +3,10 @@
 
 ## To Start
 
-yarn 
+### yarn 
 
-### Wait to install dependencies
+Wait to install dependencies
 
-expo start
+### expo start
 
 Be happy!
