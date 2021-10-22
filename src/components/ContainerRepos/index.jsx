@@ -7,12 +7,12 @@ import Header from './Header';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export default function ContainerRepos({ onPress }) {
+export default function ContainerRepos() {
   const ctx = useContext(context);
 
   return (
     <View style={styles.container}>
-      <Header backToHome={onPress} />
+      <Header />
       <FlatList
         data={ctx.repos}
         keyExtractor={(item) => String(item.id)}

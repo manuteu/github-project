@@ -10,10 +10,10 @@ export default function UserInfo() {
     <View style={styles.container}>
       <View style={styles.row}>
         <YellowTab />
-        <Text style={styles.userName}>{ctx.userData?.name}</Text>
+        <Text style={styles.userName}>{ctx?.infoFollower?.name}</Text>
       </View>
-      <Text style={styles.userEmail}>{ctx.userData?.email}</Text>
-      <Text style={styles.userLocation}>{ctx.userData?.location}</Text>
+      <Text style={styles.userEmail}>{ctx?.infoFollower?.email}</Text>
+      <Text style={styles.userLocation}>{ctx?.infoFollower?.location}</Text>
     </View>
   );
 }

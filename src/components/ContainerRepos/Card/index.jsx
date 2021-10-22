@@ -18,7 +18,7 @@ export default function Card({ data }) {
       <View style={styles.iconsContainer}>
         <View style={styles.starContainer}>
           <FontAwesome name="star-o" size={20} color="#FFCE00" />
-          <Text style={styles.starText}>{data.stargazers_count}</Text>
+          <Text style={styles.starText}> {data.stargazers_count}</Text>
         </View>
         <View style={styles.lockIcons}>
           <Feather name="unlock" size={20} color="#63BF1F" />

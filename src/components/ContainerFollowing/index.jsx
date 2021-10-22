@@ -7,13 +7,12 @@ import Header from './Header';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export default function ContainerFollowing({ onPress }) {
+export default function ContainerFollowing() {
   const ctx = useContext(context);
 
   return (
     <View style={styles.container}>
-      <Header backToHome={onPress} />
-      {/* <UserCard /> */}
+      <Header />
       <FlatList
         data={ctx?.following}
         keyExtractor={(item) => String(item.id)}

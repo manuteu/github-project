@@ -3,13 +3,19 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 import { context } from '../../context';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Header({ backToLogin }) {
+export default function Header() {
   const ctx = useContext(context);
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
-      <Text style={styles.username}>#{ctx.userData?.login}</Text>
-      <TouchableOpacity style={styles.exitContainer} onPress={backToLogin}>
+      <Text style={styles.username}>#{ctx?.userData?.login}</Text>
+      <TouchableOpacity
+        style={styles.exitContainer}
+        onPress={() => navigation.navigate('Login')}
+      >
         <Text style={styles.textButton}>Sair</Text>
         <Ionicons
           name="exit-outline"
@@ -24,7 +30,7 @@ export default function Header({ backToLogin }) {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 30,
+    paddingTop: 34,
     height: 130,
     backgroundColor: '#1F1F1F',
     flexDirection: 'row',

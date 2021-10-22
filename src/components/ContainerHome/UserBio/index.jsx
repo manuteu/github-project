@@ -13,7 +13,7 @@ export default function UserBio() {
         <Text style={styles.title}>Bio</Text>
       </View>
       <View style={styles.bioContainer}>
-        <Text style={styles.bioText}>{ctx.userData?.bio}</Text>
+        <Text style={styles.bioText}>{ctx?.userData?.bio}</Text>
       </View>
     </View>
   );

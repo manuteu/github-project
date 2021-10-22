@@ -7,6 +7,8 @@ export const ContextProvider = (props) => {
   const [repos, setRepos] = useState({});
   const [followers, setFollowers] = useState({});
   const [following, setFollowing] = useState({});
+  const [infoFollower, setInfoFollower] = useState({});
+  const [infoFollowing, setInfoFollowing] = useState({});
 
   return (
     <context.Provider
@@ -15,10 +17,14 @@ export const ContextProvider = (props) => {
         repos,
         followers,
         following,
+        infoFollower,
+        infoFollowing,
         setUserData,
         setRepos,
         setFollowers,
         setFollowing,
+        setInfoFollower,
+        setInfoFollowing,
       }}
     >
       {props.children}

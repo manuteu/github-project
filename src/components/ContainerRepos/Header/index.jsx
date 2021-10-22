@@ -3,12 +3,18 @@ import { View, Text, Pressable, StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
 import { context } from '../../context';
+import { useNavigation } from '@react-navigation/native';
 
-export default function Header({ backToHome }) {
+export default function Header() {
   const ctx = useContext(context);
+  const navigation = useNavigation();
+
   return (
     <View style={styles.container}>
-      <Pressable onPress={backToHome} style={styles.iconContainer}>
+      <Pressable
+        onPress={() => navigation.navigate('Home')}
+        style={styles.iconContainer}
+      >
         <AntDesign name="arrowleft" size={24} color="#FFF" />
       </Pressable>
 

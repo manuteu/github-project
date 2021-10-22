@@ -9,17 +9,17 @@ export default function UserNumbers({}) {
   return (
     <View style={styles.container}>
       <View style={(styles.viewContainer, { left: 8 })}>
-        <Text style={styles.viewNumber}> {ctx.userData?.followers}</Text>
+        <Text style={styles.viewNumber}> {ctx?.infoFollower?.followers}</Text>
         <Text style={styles.followersText}>Seguidores</Text>
       </View>
 
       <View style={styles.viewContainer}>
-        <Text style={styles.viewNumber}>{ctx.userData?.following}</Text>
+        <Text style={styles.viewNumber}>{ctx?.infoFollower?.following}</Text>
         <Text style={styles.followingText}>Seguindo</Text>
       </View>
 
       <View style={styles.viewContainer}>
-        <Text style={styles.viewNumber}>{ctx.userData?.public_repos}</Text>
+        <Text style={styles.viewNumber}>{ctx?.infoFollower?.public_repos}</Text>
         <Text style={styles.reposText}>Repos</Text>
       </View>
     </View>

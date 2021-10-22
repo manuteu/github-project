@@ -8,7 +8,10 @@ export default function UserPicture() {
   const ctx = useContext(context);
   return (
     <View style={styles.container}>
-      <Image source={{ uri: ctx.userData?.avatar_url }} style={styles.image} />
+      <Image
+        source={{ uri: ctx?.infoFollower?.avatar_url }}
+        style={styles.image}
+      />
     </View>
   );
 }

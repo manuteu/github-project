@@ -7,31 +7,21 @@ import UserInfo from './UserInfo';
 import UserNumbers from './UserNumbers';
 import UserBio from './UserBio';
 
-const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-export default function ContainerHome({
-  onPress,
-  goToFollowersPage,
-  goToFollowingPage,
-  goToReposPage,
-}) {
+export default function ContainerHome() {
   return (
     <View style={styles.container}>
-      <Header backToLogin={onPress} />
+      <Header />
       <View style={styles.subContainer}>
         <UserPicture />
         <ScrollView
           style={styles.scrollContainer}
-          contentInset={{ bottom: 400 }}
+          contentInset={{ bottom: 350 }}
           showsVerticalScrollIndicator={false}
         >
           <UserInfo />
-          <UserNumbers
-            goToFollowersPage={goToFollowersPage}
-            goToFollowingPage={goToFollowingPage}
-            goToReposPage={goToReposPage}
-          />
+          <UserNumbers />
           <UserBio />
         </ScrollView>
       </View>
@@ -52,6 +42,6 @@ const styles = StyleSheet.create({
     // position: 'absolute',
   },
   scrollContainer: {
-    paddingTop: 50,
+    paddingTop: 40,
   },
 });

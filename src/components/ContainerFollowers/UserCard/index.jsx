@@ -2,8 +2,21 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import YellowTab from '../../YellowTab';
 import { AntDesign } from '@expo/vector-icons';
+import { useContext } from 'react';
+import { context } from '../../context';
+import { useNavigation } from '@react-navigation/native';
+import api from '../../../service/api';
 
-export default function UserCard({ data, handleInfo }) {
+export default function UserCard({ data }) {
+  const ctx = useContext(context);
+  const navigation = useNavigation();
+
+  async function handleInfoUser(data) {
+    const info = await api.get(`/${data?.login}`);
+    ctx.setInfoFollower(info?.data);
+    navigation.navigate('Info');
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -12,7 +25,7 @@ export default function UserCard({ data, handleInfo }) {
         <Text style={styles.userName}>#{data?.login}</Text>
       </View>
       <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={handleInfo}>
+        <TouchableOpacity onPress={() => handleInfoUser(data)}>
           <AntDesign
             name="arrowright"
             size={20}
