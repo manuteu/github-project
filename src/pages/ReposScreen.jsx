@@ -10,7 +10,7 @@ export default function ReposScreen() {
 
   return (
     <View>
-      {ctx?.userData?.public_repos ? <ContainerRepos /> : undefined}
+      <ContainerRepos />
       <StatusBar style="light" />
     </View>
   );

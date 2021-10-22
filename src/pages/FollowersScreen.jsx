@@ -9,7 +9,7 @@ export default function FollowersScreen() {
 
   return (
     <View>
-      {ctx?.userData?.followers ? <ContainerFollowers /> : undefined}
+      <ContainerFollowers />
       <StatusBar style="light" />
     </View>
   );

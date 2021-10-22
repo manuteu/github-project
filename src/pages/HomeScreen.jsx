@@ -10,7 +10,7 @@ export default function HomeScreen() {
 
   return (
     <View>
-      {ctx?.userData ? <ContainerHome /> : undefined}
+      <ContainerHome />
       <StatusBar style="dark" />
     </View>
   );
