@@ -20,7 +20,7 @@ export default function UserInfo() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: -20,
+    flex: 1,
   },
   row: {
     flexDirection: 'row',

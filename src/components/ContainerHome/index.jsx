@@ -42,6 +42,6 @@ const styles = StyleSheet.create({
     // position: 'absolute',
   },
   scrollContainer: {
-    paddingTop: 40,
+    paddingTop: 20,
   },
 });
